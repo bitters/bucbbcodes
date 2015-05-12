@@ -1,0 +1,1691 @@
+/* Bootstrap */
+@import "bootstrap/bootstrap.less";
+
+@import "lib/prefixer.less";
+
+/* Font Awesome */
+@import "font-awesome/font-awesome.less";
+/* Open Weather Icon-Font */
+@import "lib/owfont-regular.min.less";
+@fa-font-path: "../templates/om/fonts";
+
+/* Fonts.com */
+@import "http://fast.fonts.net/cssapi/87480944-c405-4809-8aca-eeda8430d040.css";
+
+/* Offcanvas Menu */
+@import "lib/jasny-bootstrap.min.less";
+
+/* YAMM MegaMenu */
+@import "lib/yamm.less";
+
+/* jvectormap */
+@import "lib/jquery.vector-map.less";
+
+/* @group Variablen */
+@light-gray: #eee;
+@dark-gray: #696969;
+@bg-white: #fff;
+@font-family: 'Scene W01', sans-serif;
+@font-family-light:'Scene W01 Light', sans-serif;
+@font-family-bold:'Scene W01 Bold', sans-serif;
+@font-size-base: 14px;
+@line-height-base: 1.5;
+@base-url: "http://2015.oldenburger-muensterland.de/templates/om";
+@button-border: #899000;
+@link-inverted: #fff;
+@wirtschaft: #2b80b0;
+@tourismus: #b5be00;
+@leben: #de4a27;
+@jobs: #404040;
+@text-color: #3c3c3c;
+@boxenstopp-braun: #754225;
+/* @end */
+
+body {
+	background-color: @light-gray;
+	color: @text-color;
+	font-family: @font-family;
+	font-size: @font-size-base;
+	line-height: @line-height-base;
+}
+
+/* @group Headerbar */
+
+.headerbar {
+	border-top: 5px solid #fff;
+}
+
+.headerbar .container {
+	padding: 0;
+}
+
+/* @end */
+
+
+/* @group Buttons */
+
+.btn {
+	color: @link-inverted!important;
+	padding: 5px 15px;
+	.box-shadow(none);
+	text-shadow: none;
+	.transition(all 0.3s ease);
+}
+
+.btn, .btn:active, .btn:focus {
+	background-color: @tourismus;
+	border: 1px solid @button-border;
+	text-decoration: none;
+}
+
+.inhalt .blog .item a:hover,
+.btn:hover {
+	background-color: darken(@tourismus, 6.5%);
+}
+
+/* @end */
+
+/* @group Grid */
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.content {
+	.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+[class*=' col-'] img {
+	max-width: 100%;
+}
+
+/* @end */
+
+/* @group Typographie */
+
+a {
+	color: @text-color;
+}
+
+a:hover, a:focus {
+	text-decoration: underline;
+}
+
+strong, b {
+	font-family: @font-family-bold;
+	font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: @font-family;
+	font-weight: normal;
+	line-height: 1.1;
+}
+
+/* @end */
+
+/* @group Logo */
+#logo {
+	margin: 0;
+	
+	a {
+		display: block;
+		position: relative;
+		width: 230px;
+		height: 50px;
+		background: #fff url("@{base-url}/images/logo.svg") no-repeat;
+		background-size: contain;
+		margin: 15px 70px 15px 0;
+		z-index: 889;
+		text-indent: -9999px;
+		
+		&:after {
+			content: " ";
+			height: 81px;
+			width: 70px;
+			display: block;
+			.linear-gradient-right(rgba(255,255,255,1), rgba(255,255,255,1), 0%, rgba(255,255,255,1), 40%, rgba(255,255,255,0), 100%);
+			position: absolute;
+			z-index: 888;
+			top: -15px;
+			right: -70px;
+		}
+		
+	}
+
+}
+
+.portal #logo a {
+	margin: 20px 15px 15px 20px;
+	width: 265px;
+	height: 70px;
+}
+/* @end */
+
+/* @group Suche */
+#search {
+	position: absolute;
+	top: 22px;
+	right: 0;
+}
+
+#mod-search-searchword {
+	border-radius: 0;
+	width: 140px;
+}
+
+.btn-toolbar, .phrases, .only, .search-results .result-category, .search-results .result-created {
+	display: none;
+}
+
+.search-results .result-title {
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+.search:after {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #aaa;
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+/* @end */
+
+/* @group Portal */
+.portal {
+	margin-top: 80px;
+}
+
+.portal .headerbar {
+	margin: 2px -13px;
+	height: auto;
+}
+
+.welcome {
+	padding: 25px 23px 0 23px;
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+.topmenu {
+	margin: 23px;
+}
+
+.topmenu .nav > li {
+	display: inline-block;
+}
+
+.topmenu .nav > li:before {
+	content: "\00b7";
+	padding: 0 5px 0 5px;
+	color: #3c3c3c;
+}
+
+.topmenu .nav > li:first-child:before {
+	content: '';
+}
+
+.topmenu .nav > li a {
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	font-size: 14px;
+	color: #3c3c3c;
+}
+
+.topmenu .nav > li a:hover, 
+.topmenu .nav > li a:focus {
+	text-decoration: underline;
+	background: none;
+}
+
+/* @end */
+
+/* @group Navigation */
+
+.headerbar-top {
+	background: #eee;
+}
+
+.headerbar {
+	background-color: #fff;
+	height: 86px;
+}
+
+.affix {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.affix-top {
+	top: 31px;
+}
+
+.headerbar.affix {
+	.box-shadow(0 0 5px #bbb);
+}
+
+.affix + .container {
+	margin-top: 91px;
+}
+
+.mainmenu-first .nav,
+.mainmenu-first .nav > li {
+	float: left;
+}
+
+.mainmenu-first .nav > li > a {
+	padding: 5px;
+	font-size: 15px;
+	line-height: 21px;
+	text-align: center;
+	width: 125px;
+	color: @link-inverted;
+}
+
+.mainmenu-first li a {
+	opacity: 0.6;
+}
+
+.mainmenu-first li.item-101.active a,
+.mainmenu-first li.current a {
+	opacity: 1;
+}
+
+/* @end */
+
+
+
+/* @group Hauptmenü */
+
+.yamm .list-unstyled, .yamm .list-unstyled ul {
+	min-width: 120px;
+}
+
+.yamm .col-sm-2 {
+	min-width: 120px;
+}
+
+.navbar-default {
+  background-color: #fff;
+  border:none;
+}
+
+.nav .open > a, 
+.nav .open > a:hover, 
+.nav .open > a:focus {
+	background-color: transparent;
+	border: none;
+}
+
+/*zweite Ebene*/
+
+#mainmenu-second .nav > li > a {
+	color: @text-color;
+	line-height: 21px;
+	font-size: 16px;
+	padding: 30px 20px 25px 20px;
+	border-bottom: 5px solid #fff;
+}
+
+#mainmenu-second .nav > li > a:hover {
+	background-color: transparent;
+}
+
+#mainmenu-second .nav > li.current > a {
+	border-bottom: 5px solid @tourismus;
+	color: @tourismus;
+}
+
+#mainmenu-second .nav > li > a:hover,
+#mainmenu-second .nav > li > a:focus {
+	background-color: transparent;
+	background: none;
+}
+
+#mainmenu-second .nav > li.active > a,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	border-bottom: 5px solid #ccc;
+	background: #fff;
+}
+
+.topmenu .nav li a i,
+#mainmenu-second .nav li a i {
+	display: none;
+}
+
+.navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+
+.dropdown-menu {
+	padding: 0;
+}
+
+.yamm-content > div > div > ul > li {
+
+	img {
+		width: 100%;
+	}
+	
+	.nav-header {
+		position: relative;
+	}
+
+	a {
+		display: block;
+		margin: 0 5px;
+		padding: 0 5px;
+	}
+	
+	> a {
+		text-transform: uppercase;
+		color: @dark-gray;
+		font-weight: bold;
+		margin-top: 15px;
+	}
+	
+	&:first-child > a {
+		margin: 0;
+	}
+	
+	// Zweite Ebene
+	> ul > li > a {
+		border-bottom: 1px solid @light-gray;
+		padding: 2px 5px;
+		font-size: 14px;
+	}
+	
+	// Dritte Ebene
+	> ul > li > ul {
+		/*background: @light-gray;*/
+		margin: 0 5px;
+		padding: 3px 0;
+	}
+	
+	> ul > li > ul > li > a {
+		font-size: 12px;
+		color: @dark-gray;
+		padding-left: 15px;
+		
+		&:before {    
+			font-family: 'FontAwesome';
+			content: @fa-var-angle-right;
+			margin:0 5px 0 -15px;
+			color: #ccc;
+			display:inline-block;
+		}
+		
+	}
+}
+
+/* @end */
+
+/* @group Sidebar */
+.sidebar .moduletable {
+	background-color: #fff;
+}
+
+.sidebar .moduletable .custom, .sidebar .poifilter {
+	padding: 20px;
+}
+
+/* @end */
+
+/* @group POI-Datenbank */
+
+.cropcontainer {
+	height: 140px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.cropcontainer:after {
+	content: " ";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	height: 50px;
+	width: 100%;
+	.linear-gradient-top(#fff,rgba(255,255,255,0),0%,#fff,100%);
+}
+
+.poi-list-entry {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ddd;
+}
+
+.poi-list-entry h2 {
+	line-height: 18px;
+}
+
+.poi-list-entry h2 a {
+	color: #333;
+	font-size: 20px;
+}
+
+.poi-list-entry h4 {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.poi-list-entry .zimmerpreis, .poi-list-entry .zimmerinfo {
+	text-align: center;
+	display: block;
+	margin: 0;
+}
+
+.poi-list-entry .zimmerpreis {
+	background: @tourismus;
+	color: #fff;
+	line-height: 50px;
+	font-size: 20px;
+}
+
+.poi-list-entry .zimmerinfo {
+	background: #e2e2e2;
+	color: #7f7f7f;
+	padding: 20px;
+}
+
+.poi-list-entry .mapnumber {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: -10px;
+	background: @tourismus;
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+}
+
+/* @group Detailseite */
+
+#tab_themen .fa-ul {
+	padding: 0;
+	margin: 0;
+}
+
+#tab_themen .fa-ul > li {
+	position: relative;
+	padding: 5px 20px 5px 55px;
+	display: inline-block;
+	width: 33%;
+	height: 51px;
+	overflow: hidden;
+}
+
+#tab_themen .fa-li {
+	position: absolute;
+	left: 7px;
+	width: 40px;
+	top: 5px;
+	text-align: center;
+	font-size: 38px;
+	color: #fff;
+	background: #9c9c9c;
+	border-radius: 3px;
+}
+
+#tab_themen i.fa-li {
+	border: 1px solid #757573;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group POI-Filter */
+
+.slider-container {
+	padding: 5px 0;
+}
+
+.slider {
+	margin: 0 15px;
+}
+
+.slider-container .btn {
+	margin: 20px 0 0 0;
+}
+
+.slider-container .tooltip {
+	background: none;
+	border: none;
+}
+
+.slider-handle {
+	background-image: none!important;
+	background: @tourismus!important;
+	border: 1px solid #899000!important;
+}
+
+.slider.slider-horizontal {
+	width: 140px!important;
+}
+
+/* @group Google Map */
+
+#collapseMap {
+	margin: 10px 0 0 0;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group POI Suche */
+
+.poisearch {
+	padding: 16px;
+}
+
+.poisearch .introtext {
+	margin-bottom: 7px!important;
+}
+
+.poisearch .form-group {
+	margin-bottom: 10px;
+}
+
+/* @end */
+
+/* @group Inhalt */
+.mainblock {
+	margin: 40px 0;
+}
+
+.page-header {
+	padding-bottom: 10px;
+	margin: 0;
+	border: none;
+}
+
+.page-header h1 {
+	display: none;
+}
+
+.content a:hover {
+	text-decoration: underline;
+}
+
+.content h2 {
+	margin: 0 0 15px 0;
+}
+
+.content h2 a:hover {
+	text-decoration: none;
+	color: #404040;
+}
+
+.blog .item h2, .blog .item h2 a {
+	color: #333;
+	font-size: 20px;
+	line-height: 24px;
+	margin: 0;
+}
+
+.blog .item h2 a:hover {
+	background: none!important;
+	color: #333!important;
+}
+
+.blog .row {
+	margin-bottom: 20px!important;
+}
+
+.content .inhalt {
+	background-color: #fff;
+	padding: 30px;
+}
+
+.content .sterne {
+	font-size: 55%;
+	color: #bbb;
+	vertical-align: super;
+	display: inline-block;
+}
+
+.content .table thead {
+	background-color: #eee;
+	color: #fff;
+}
+
+.content .table > thead > tr > th {
+	border: none;
+	padding: 5px 10px;
+	font-size: 12px;
+}
+
+div.sigProGalleriaWhiteContainer {
+	background: none;
+	margin: 8px 0 20px 0;
+	padding: 0;
+}
+
+div.sigProGalleriaWhitePlaceholderContainer {
+	margin-bottom: 15px;
+}
+
+p.sigProGalleriaWhiteTargetTitle {
+	display: none;
+}
+
+.content form.form-inline {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid #ddd;
+}
+
+.content .blog .span6 {
+	width: 50%;
+	float: left;
+}
+
+.content .blog .item {
+	margin: 2px;
+}
+
+.content .item-image {
+	margin-bottom: 20px;
+}
+
+
+/* @end */
+
+/* @group Seitenzahlen */
+.pagination {
+	margin: 18px 0;
+}
+
+.pagination ul {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	margin-left: 0;
+	margin-bottom: 0;
+	.box-shadow(0 1px 2px rgba(0,0,0,0.05));
+}
+
+.pagination ul > li {
+	display: inline;
+}
+
+.pagination ul > li > a,
+.pagination ul > li > span {
+	float: left;
+	padding: 10px 15px;
+	line-height: 18px;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-left-width: 0;
+}
+
+.pagination ul > li > a:hover,
+.pagination ul > li > a:focus {
+	background-color: #f5f5f5;
+}
+
+.pagination ul > .active > a,
+.pagination ul > .active > a:hover,
+.pagination ul > .active > a:focus,
+.pagination ul > .active > span {
+	background-color: #b5be00;
+	color: #fff;
+	cursor: default;
+}
+
+.pagination ul > .disabled > span,
+.pagination ul > .disabled > a,
+.pagination ul > .disabled > a:hover,
+.pagination ul > .disabled > a:focus {
+	color: #3c3c3c;
+	background-color: transparent;
+	cursor: default;
+}
+
+.pagination ul > li:first-child > a,
+.pagination ul > li:first-child > span {
+	border-left-width: 1px;
+}
+
+.pagination-centered {
+	text-align: center;
+}
+
+.pagination-right {
+	text-align: right;
+}
+/* @end */
+
+/* @group Breadcrumbs */
+.breadcrumb {
+	margin: 0;
+	border-radius: 0;
+}
+
+.breadcrumb > .active {
+	color: #b5be00;
+}
+
+.breadcrumb li a {
+	color: #3c3c3c;
+}
+/* @end */
+
+/* @group Intro */
+.intro {
+	position: relative;
+	width: 550px;
+	margin: 65px 0 40px 0;
+}
+
+.site .intro h2 {
+	font-size: 28px;
+	color: #fff;
+	background: none;
+	text-transform: none;
+	background-color: #b5be00;
+	padding: 7px 15px;
+	margin: 0 0 4px 0;
+	display: inline-block;
+}
+
+.intro p {
+	font-size: 14px;
+	color: #3c3c3c;
+	background: #fff;
+	padding: 11px 18px;
+	display: block;
+	line-height: 24px;
+}
+/* @end */
+
+
+/* @group Weather Box */
+.weather {
+	position: relative;
+	display: block;
+	height: 100%;
+	width: 100%;
+	color: #fff;
+	padding: 13px;
+}
+
+.weather-icon {
+	float: left;
+	margin: 5px 10px 5px 0;
+}
+
+.weather-icon img {
+	width: 120px!important;
+}
+
+.weather-text {
+	margin: 20px 0 0 0;
+	font-size: 14px;
+}
+
+.weather-temperature {
+	font-size: 36px;
+}
+
+ul.weather-next {
+	position: relative;
+	bottom: 17px;
+}
+
+.weather-forecast {
+	clear: both;
+}
+
+.weather-icon i {
+	font-size: 8em;
+}
+
+.weather-forecast ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.weather-forecast .weather-item {
+	height: 24px;
+	font-size: 16px;
+}
+
+.weather-forecast .forecast-icon i {
+	top: 7px;
+	position: relative;
+}
+
+.temp1 { background: #5331a6; }
+.temp2 { background: #326ec4; }
+.temp3 { background: #59d5e5; }
+.temp4 { background: #b5be00; }
+.temp5 { background: #F8CA00; }
+.temp6 { background: #E97F02; }
+.temp7 { background: #e93600; }
+/* @end */
+
+
+/* @group Fullscreen Background Caption */
+.background .custom {
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+/* @end */
+
+/* @group Raster-System */
+.raster {
+	margin: 30px 0;
+}
+
+.rasterportal {
+	margin: 0;
+}
+
+.rasterportal .box p,
+.raster .box p {
+	margin: 0;
+}
+
+.rasterportal .box,
+.raster .box {
+	background-color: #fff;
+	margin: 2px 0;
+	position: relative;
+	padding: 0;
+	/*overflow: hidden;*/
+	overflow: scroll;
+}
+
+.raster .box {
+	height: 198px;
+	overflow: hidden;
+}
+
+.rasterportal .box {
+	height: 254px;
+}
+
+.sidebar h3,
+.rasterportal .box h3,
+.raster .box h3,
+.nav-header {
+	background-color: @dark-gray;
+	color: #fff;
+	font-size: 16px;
+	line-height: 27px;
+	padding: 5px 15px;
+	margin: 0;
+	position: absolute;
+	display: block;
+	width: 100%;
+	z-index: 3;
+}
+
+.sidebar .nav-header {
+	display: block;
+	position: relative;
+}
+
+.sidebar .menu .current a {
+	background: #eee;
+}
+
+.sidebar h3,
+.rasterportal .box .reset,
+.raster .box .reset {
+	position: relative;
+}
+
+.rasterportal .box img,
+.raster .box img {
+	width: 100%;
+	height: auto;
+}
+
+.rasterportal .box-height-2,
+.raster .box-height-2 {
+	height: 400px!important;
+}
+
+.rasterportal .padding-top > div,
+.raster .padding-top > div {
+	padding-top: 48px;
+}
+
+/* Portal Raster */
+.blocks .box {
+	height: 300px;
+}
+
+.blocks .box h3 {
+	padding: 25px 30px;
+	font-size: 32px;
+	text-align: center;
+	font-weight: normal;
+	font-family: @font-family-light;
+	z-index: 7;
+	bottom: 0;
+}
+
+.blocks img {
+	.transition(all 0.4s ease-in-out);
+}
+
+.blocks a:hover img {
+	.transform(scale(1.1));	
+}
+
+/*OM Box Modul*/
+.ombox a,
+.ombox a:hover {
+	display: block;
+	text-decoration: none;
+}
+
+.ombox .featureblock {
+	position: absolute;
+	top: 40px;
+	right: 8px;
+}
+
+.ombox ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.ombox ul li {
+	color: #fff;
+	font-size: 14px;
+	margin: 5px 0;
+	text-align: right;
+}
+
+.ombox ul li span {
+	background-color: #656565;
+	padding: 3px 5px;
+}
+
+.ombox .price {
+	position: absolute;
+	bottom: 6px;
+	right: 8px;
+	background-color: #333;
+	padding: 5px 10px;
+	font-size: 18px;
+	color: #fff;
+}
+
+/*Aktuelles*/
+ul.category-module {
+	margin: 0;
+	padding: 20px 10px;
+	list-style: none;
+}
+
+ul.category-module li {
+	float: left;
+	width: 50%;
+	position: relative;
+	padding: 0 10px;
+}
+
+.mod-articles-category-title {
+	color: @text-color!important;
+	font-family: @font-family-bold;
+	font-weight: normal;
+	font-size: 15px;
+	display: block;
+}
+
+.mod-articles-category-date {
+	font-size: 13px;
+}
+
+.mod-articles-category-readmore a {
+	display: inline-block;
+	float: left;
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	font-size: 18px;
+}
+
+/*Veranstaltungen*/
+.newsflash {
+	padding: 24px 15px;
+}
+
+.newsflash h5 {
+	font-family: @font-family-bold;
+	font-size: 15px;
+	margin: 0 0 20px 0;
+}
+
+.newsflash h5.newsflash-title {
+	font-family:@font-family;
+	font-size: 13px;
+	margin: 0 0 5px 0;
+}
+ /* @end */
+
+/* @group Footer */
+footer {
+	position: relative;
+	background-color: #b5be00;
+	border-top: 5px solid #fff;
+	margin-top: 40px;
+}
+
+footer h3 {
+	color: #fff;
+	margin: 20px 0 10px 0;
+}
+
+footer p {
+	color: #fff;
+	font-size: 14px;
+	margin: 0 0 9px 0;
+}
+
+footer a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+footer a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+footer img {
+	width: 50%;
+	height: auto;
+	float: left;
+	margin: -20px 40px 0 0;
+}
+
+/*Footermenu*/
+.footermenu {
+	margin-top: 20px;
+}
+
+.footermenu .nav > li {
+	display: inline-block;
+}
+
+.footermenu .nav > li + li:before {
+	content: "/\00a0";
+	padding: 0 0 0 5px;
+	color: #fff;
+}
+
+.footermenu .nav > li a {
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	font-size: 12px;
+	color: #fff;
+}
+
+.footermenu .nav > li a:hover, 
+.footermenu .nav > li a:focus {
+	text-decoration: none;
+	background: none;
+}
+/* @end */
+
+/* @group Flexible iFrame */
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.map-container iframe,   
+.map-container object,  
+.map-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* @end */
+
+/* @group Google Maps */
+.gm-style img { 
+	max-width: none;
+}
+
+.gm-style label {
+	width: auto; 
+	display: inline; 
+}
+/* @end */
+
+/* @group Facebook */
+#fb-root {
+	display: none;
+}
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+	width: 100%!important;
+}
+/* @end */
+
+/* @group Clearfix */
+.clearfix:after,
+ul.category-module:after {
+   content: " ";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+/* @end */
+
+/* @group media queries */
+/* large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	.rasterportal .box {
+		height: 285px;
+	}
+	.blocks .box {
+		height: 260px;
+	}
+	.portal .logo h1 a {
+		margin: 32px 15px 30px 20px;
+		width: 217px;
+		height: 50px;
+	}
+	#mainmenu-second .nav > li > a {
+		font-size: 14px;
+		padding: 30px 12px;
+	}
+	.raster .box {
+		height: 100%;
+	}
+	.rasterportal .box-height, .raster .box-height {
+		height: 332px!important;
+	}
+	footer h3 {
+		font-size: 20px;
+	}
+	footer p {
+		font-size: 12px;
+	}
+	footer .custom img {
+		width: 60%;
+		margin: -20px 20px 0px 0;
+	}
+	.logo:after {
+		right: -30px;
+	}
+	
+}
+
+/* portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	.rasterportal .box {
+		height: 100%;
+	}
+	.rasterportal .box-height, .raster .box-height {
+		height: 514px!important;
+	}
+	.portal .logo h1 a {
+		margin: 20px 15px 0px 20px;
+	}
+	.portal .headerbar {
+		position: relative;
+	}
+	.col-md-3.last {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	.welcome {
+		padding: 15px 23px 10px 23px;
+		font-size: 13px;
+	}
+	.portal {
+		margin: 50px 0;
+	}
+	.raster .box {
+		height: 100%;
+	}
+	ul.category-module li {
+		float: none;
+		width: 100%;
+		margin: 0 0 25px 0;
+	}
+	footer .custom img {
+		display: none;
+	}
+	.logo:after {
+		display: none;
+	}
+	.navigation-onscreen .nav {
+		right: 0!important;
+	}	
+	
+}
+
+/* landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	#cp-bg-slide {
+		display: none!important;
+	}
+	body {
+		background-color: #555!important;
+	}
+	.portal {
+		margin: 0;
+	}
+	.rasterportal .box {
+		height: 100%;
+	}
+	.rasterportal .box-height, .raster .box-height {
+		height: 100%!important;
+	}
+	.portal .logo h1 a {
+		width: 88%;
+		height: 70px;
+		margin: 20px 0 15px 20px;
+	}
+	.welcome {
+		padding: 10px 23px 0 23px;
+		font-size: 15px;
+	}
+	.topmenu .nav > li a {
+		font-size: 15px;
+	}
+	.portal .headerbar {
+		position: relative;
+	}
+	.col-md-3.last {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	.raster .box {
+		height: 100%;
+	}
+	ul.category-module li {
+		float: none;
+		width: 100%;
+		margin: 0 0 25px 0;
+	}
+	.mainmenu-first .nav > li > a {
+		padding: 7px 20px;
+		font-size: 14px;
+		width: 100%;
+	}
+	.logo {
+		margin: 20px 15px;
+		width: 75%;
+	}
+	.logo:after {
+		display: none;
+	}
+	.logo h1 a {
+		width: 100%;
+	}
+	.offcanvas.in {
+		box-shadow: 35px 0px 150px #333;
+			-webkit-box-shadow: 35px 0px 150px #333;
+				-moz-box-shadow: 35px 0px 150px #333;
+	}
+	.navbar-toggle {
+		position: absolute;
+		right: 0;
+		top: -63px;
+		z-index: 9999;
+	}
+	.navigation-onscreen {
+		display: none;
+	}
+	.navmenu-default, .navbar-default .navbar-offcanvas {
+		background-color: #fff!important;
+		border: none!important;
+	}
+	#mainmenu-second {
+		width: 100%;
+		position: relative;
+	}
+	.headerbar .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+		background-color: #555;
+	}
+	#mainmenu-second .nav {
+		background-color: #333;
+	}
+	#mainmenu-second .nav, #mainmenu-second .nav > li {
+		float: left;
+		width: 100%;
+		display: block;
+	}
+	#mainmenu-second .nav > li > a {
+		padding: 20px;
+		border-bottom: 1px solid #777;
+		color: #eee;
+	}
+	/*#mainmenu-second .nav > li:last-child > a {
+		border-bottom: none;
+	}*/
+	#mainmenu-second .nav > li.active > a {
+		border: none;
+		background-color: #b5be00;
+		color: #fff;
+	}
+	#mainmenu-second li .dropdown-menu {
+		position: relative;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		display: block;
+		float: left;
+		min-width: 100%;
+		padding: 0;
+		margin: 0 0 20px 0;
+		list-style: none;
+		font-size: 14px;
+		text-align: left;
+		background: none;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+	}
+	#mainmenu-second li .dropdown-menu > li > a {
+		padding: 10px 20px 10px 40px;
+		color: #bbb;
+	}
+	#mainmenu-second li .dropdown-menu li .dropdown-menu {
+		display: none;
+		position: relative;
+		top: 0;
+		left: 0;
+	}
+	#mainmenu-second li .dropdown-menu li .dropdown-menu li a {
+		padding: 10px 20px 10px 60px;
+		color: #888;
+	}
+	.content .col-md-3 img {
+		margin-bottom: 25px;
+	}
+	.intro {
+		position: relative;
+		width: 99%;
+		margin: 2px;
+	}
+	.intro h2 {
+		font-size: 26px;
+		margin: 0 150px 4px 0;
+	}
+	footer {
+		padding: 20px;
+	}
+	.kontakt {
+		margin-bottom: 40px;
+	}
+	footer .custom img {
+		display: none;
+	}
+	
+}
+
+/* portrait phones and smaller */
+@media (max-width: 480px) {
+	.portal .headerbar {
+		position: relative;
+	}
+	.col-md-3.last {
+		position: relative;
+		top: 0;
+		right: 0;
+	}
+	.intro h2 {
+		font-size: 26px;
+		margin: 0 15px 4px 0;
+	}
+	
+}
+
+/* responsive Tabs and Tables */
+@media only screen and (max-width: 1199px), (min-device-width: 768px) and (max-device-width: 1024px)  {
+	/* Force table to not be like tables anymore */
+	.table-responsive, .table-responsive thead, .table-responsive tbody, .table-responsive th, .table-responsive td, .table-responsive tr { 
+		display: block; 
+	}
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.table-responsive thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	.table-responsive td { 
+		/* Behave  like a "row" */
+		border: none;
+		position: relative;
+		padding-left: 50%!important;
+	}
+	.table-responsive td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 10px;
+		left: 10px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+	/* Label the data */
+	.table-responsive td:before { content: attr(data-label); }
+
+	.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+		padding: 10px;
+		vertical-align: middle;
+		height: 40px;
+	}
+	.table-responsive > tbody > tr > td:first-child {
+		border-top: none;
+	}
+	.table-striped > tbody > tr {
+		background-color: #efefef;
+		border-bottom: 2px solid #ddd;
+	}
+	.table-striped > tbody > tr:last-of-type {
+		border-bottom: none;
+	}
+	.table-responsive {
+		border: none;
+	}
+	.table {
+		border: 2px solid #ddd;
+	}
+	.nonresponsive td:nth-child(odd) {
+		width: 50%;
+	}
+	.nonresponsive td:nth-child(even) {
+		padding: 10px 0;
+	}
+}
+/* @end */
+
+
+/* @group Tourismus */
+
+body.tourismus h2 {
+	color: @tourismus;
+}
+
+.box h3.tourismus {
+	background: @tourismus;
+}
+
+.mainmenu-first .tourismus {
+
+	li a {
+		background-color: lighten(@tourismus, 30%);
+	}
+
+	li.active a, li a:hover {
+		background-color: @tourismus;
+	}
+}
+
+.tourismus {
+
+	.headerbar {
+		border-top-color: @tourismus;
+	}
+
+	.btn, .btn:active, .btn:focus {
+		background-color: @tourismus;
+		border-color: darken(@tourismus, 6.5%);
+	}
+	
+	.btn:hover {
+		background-color: darken(@tourismus, 6.5%);
+	}
+	
+	a {
+		color: @tourismus;
+	}
+	
+	.form-control:focus {
+		border-color: darken(@tourismus, 6.5%);
+		.box-shadow(0 0 8px @tourismus);
+	}
+	
+	.navbar-toggle {
+		background-color: @tourismus;
+	}
+	
+	#mainmenu-second .nav > li.active > a,
+	.navbar-default .navbar-nav > .active > a,
+	.navbar-default .navbar-nav > .active > a:hover,
+	.navbar-default .navbar-nav > .active > a:focus {
+		border-bottom-color: @tourismus;
+	}
+	
+	.content .table thead {
+		background-color: @tourismus;
+	}
+	
+	.sidebar h3,
+	.rasterportal .box h3,
+	.raster .box h3,
+	.nav-header,
+	.ombox .price,
+	{
+		background-color: @tourismus;
+	}
+	
+	.raster .box.boxenstopp h3, .boxenstopp .ombox .price {
+		background: @boxenstopp-braun;
+	}
+	
+}
+
+/* @end */
+
+/* @group Wirtschaft */
+
+.mainmenu-first .wirtschaft {
+	
+	li a {
+		background-color: lighten(@wirtschaft, 30%);
+	}
+
+	li.active a, li a:hover {
+		background-color: @wirtschaft;
+	}
+
+}
+
+.rasterportal .box h3.wirtschaft {
+	background-color: @wirtschaft;
+}
+
+/* @end */
+
+/* @group Leben */
+
+.mainmenu-first .leben {
+	
+	li a {
+		background-color: lighten(@leben, 30%);
+	}
+
+	li.active a, li a:hover {
+		background-color: @leben;
+	}
+
+}
+
+.rasterportal .box h3.leben {
+	background-color: @leben;
+}
+
+/* @end */
+
+/* @group Jobs */
+
+.mainmenu-first .jobs {
+	
+	li a {
+		background-color: lighten(@jobs, 30%);
+	}
+
+	li.active a, li a:hover {
+		background-color: @jobs;
+	}
+
+}
+
+.rasterportal .box h3.jobs {
+	background-color: @jobs;
+}
+
+/* @end */
