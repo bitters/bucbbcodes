@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content">
+	<name>BuC Bootstrap 3 Replacer</name>
+	<author>Michael Bornhorst</author>
+	<creationDate>2014</creationDate>
+	<copyright>Bitter und Company</copyright>
+	<license></license>
+	<authorEmail>michael@bitters.de</authorEmail>
+	<authorUrl>www.bitters.de</authorUrl>
+	<version>1.0</version>
+	<description></description>
+	<files>
+		<filename plugin="bucbsgrid">bucbsgrid.php</filename>
+		<filename>index.html</filename>
+	</files>
+</extension>
